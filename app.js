@@ -1,4 +1,4 @@
-
+let gridColor = "black";
 
 function buildGrid(rows, columns) {
     const grid = document.getElementById("grid");
@@ -12,26 +12,35 @@ function buildGrid(rows, columns) {
             const col = document.createElement("div");
             row.append(col);
             col.classList.add("square");
-            col.addEventListener("mouseover", changeColor);
+            col.addEventListener("mouseover", (e) => {
+                let element = e.target;
+                element.style.backgroundColor = gridColor;
+            });
         }
     }
 }
 
-function changeColor(e) {
-    e.target.classList.add("changeColor");
-}
-
 function clearGrid() {
     let squares = document.querySelectorAll(".square");
-    console.log(squares);
-
     squares.forEach((square) => {
-        square.classList.remove("changeColor");
+        square.style.backgroundColor = "white";
     });
 }
 
 const clearButton = document.getElementById("clear-btn");
-console.log(clearButton);
 clearButton.addEventListener("click", clearGrid);
+
+const colorButtons = document.querySelectorAll(".color-btn");
+colorButtons.forEach((button) => {
+    button.addEventListener("click", (e) => {
+        const colorPicked = e.target.textContent.toLowerCase();
+        const newColor = colorPicked.replace(/ /g,'');
+        if (newColor === "softorange") {
+            gridColor = "#F8CBA6";
+        } else {
+            gridColor = newColor;
+        }
+    });
+});
 
 buildGrid(16, 16);

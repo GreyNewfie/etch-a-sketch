@@ -15,8 +15,40 @@ body {
 }
 
 #menu {
-    font-size: large;
+    font-size: larger;
     margin-right: 50px;
+}
+
+#colorMenu {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#color-options {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.color-btn {
+    border: solid #F8CBA6;
+    border-radius: 10px;
+    background-color: white;
+    color: #F8CBA6;
+    padding: 2px 15px;
+    font-size: medium;
+    margin-top: 10px;
+}
+
+a #submit-color {
+    border: solid #F8CBA6;
+    border-radius: 10px;
+    background-color: #ECF9FF;
+    color: #F8CBA6;
+    padding: 2px 15px;
+    font-size: medium;
+    margin-top: 10px;
 }
 
 #grid {
@@ -34,20 +66,14 @@ body {
 }
 
 .square {
-    min-width: 1px;
-    min-height: 1px;
     flex: 1;
-}
-
-.changeColor {
-    background-color: black;
 }
 
 #clear-btn {
     border: solid #F8CBA6;
     border-radius: 10px;
-    background-color: #FFFBEB;
+    background-color: white;
     color: #F8CBA6;
-    padding: 10px 20px;
+    padding: 5px 20px;
     font-size: large;
 }
