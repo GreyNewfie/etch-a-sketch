@@ -37,6 +37,8 @@ colorButtons.forEach((button) => {
         const newColor = colorPicked.replace(/ /g,'');
         if (newColor === "softorange") {
             gridColor = "#F8CBA6";
+        } else if (newColor === "lightblue") {
+            gridColor = "#ECF9FF"
         } else {
             gridColor = newColor;
         }

@@ -16,11 +16,14 @@ body {
 
 #menu {
     font-size: larger;
-    margin-right: 50px;
+    margin-right: 30px;
+}
+
+#menu h4 {
+    margin: 0;
 }
 
 #colorMenu {
-    margin-bottom: 30px;
     display: flex;
     flex-direction: column;
 }
@@ -28,7 +31,7 @@ body {
 #color-options {
     display: flex;
     flex-direction: column;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .color-btn {
