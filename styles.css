@@ -1,7 +1,7 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     background-color: #ECF9FF;
-    color: #F8CBA6;
+    color: #FFA500;
 }
 
 #header {
@@ -14,6 +14,26 @@ body {
     justify-content: center;
 }
 
+/* Grid styles and creates equal size squares */
+#grid {
+    width: 80vh;
+    height: 80vh;
+    background-color: white;
+    border: solid #FFA500;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex: 1;
+}
+
+.square {
+    flex: 1;
+}
+
+/* Mennu bar syles */
 #menu {
     font-size: larger;
     margin-right: 30px;
@@ -31,52 +51,72 @@ body {
 #color-options {
     display: flex;
     flex-direction: column;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
 .color-btn {
-    border: solid #F8CBA6;
+    border: solid #FFA500;
     border-radius: 10px;
     background-color: white;
-    color: #F8CBA6;
+    color: #FFA500;
     padding: 2px 15px;
     font-size: medium;
     margin-top: 10px;
 }
 
-a #submit-color {
-    border: solid #F8CBA6;
-    border-radius: 10px;
-    background-color: #ECF9FF;
-    color: #F8CBA6;
-    padding: 2px 15px;
+#grid-size {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#grid-size h4 {
+    margin-bottom: 10px;
+}
+
+#grid-size p {
+    margin: 0;
     font-size: medium;
-    margin-top: 10px;
 }
 
-#grid {
-    width: 80vh;
-    height: 80vh;
-    background-color: white;
-    border: solid #F8CBA6;
-    display: flex;
-    flex-direction: column;
+#slider {
+    -webkit-appearance: none;
+    height: 10px;
+    border-radius: 5px;
+    background: #F8CBA6;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
 }
 
-.row {
-    display: flex;
-    flex: 1;
+#slider:hover {
+    opacity: 1;
 }
 
-.square {
-    flex: 1;
+#slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #FFA500;
+    cursor: pointer;
+}
+
+#slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #F8CBA6;
+    cursor: pointer;
 }
 
 #clear-btn {
-    border: solid #F8CBA6;
+    border: solid #FFA500;
     border-radius: 10px;
     background-color: white;
-    color: #F8CBA6;
+    color: #FFA500;
     padding: 5px 20px;
     font-size: large;
+    width: 100%;
 }

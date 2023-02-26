@@ -1,8 +1,7 @@
+const grid = document.getElementById("grid");
 let gridColor = "black";
 
 function buildGrid(rows, columns) {
-    const grid = document.getElementById("grid");
-
     for (i = 0; i < rows; i++) {
         const row = document.createElement("div");
         grid.append(row);
@@ -20,6 +19,17 @@ function buildGrid(rows, columns) {
     }
 }
 
+function resetGridSize(rows, columns) {
+    while (grid.firstChild) {
+        grid.removeChild(grid.firstChild);
+    }
+    if (rows && columns) {
+        buildGrid(rows, columns);
+    } else {
+        buildGrid(newGridSize, newGridSize);
+    }
+}
+
 function clearGrid() {
     let squares = document.querySelectorAll(".square");
     squares.forEach((square) => {
@@ -31,6 +41,7 @@ const clearButton = document.getElementById("clear-btn");
 clearButton.addEventListener("click", clearGrid);
 
 const colorButtons = document.querySelectorAll(".color-btn");
+
 colorButtons.forEach((button) => {
     button.addEventListener("click", (e) => {
         const colorPicked = e.target.textContent.toLowerCase();
@@ -45,4 +56,17 @@ colorButtons.forEach((button) => {
     });
 });
 
-buildGrid(16, 16);
+//Adjusts grid size based on range input when a new size is selected
+const input = document.querySelector("input");
+const output = document.getElementById("selected-size");
+
+let newGridSize = input.value;
+output.textContent = `${newGridSize} x ${newGridSize}`;
+
+input.addEventListener("input", (e) => {
+    newGridSize = e.target.value;
+    output.textContent = `${input.value} x ${input.value}`;
+    resetGridSize(newGridSize, newGridSize);
+});
+
+buildGrid(newGridSize, newGridSize);
